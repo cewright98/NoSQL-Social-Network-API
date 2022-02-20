@@ -11,6 +11,14 @@ The primary function of this database is to act as a social network where users 
 
 Walkthrough videos:
 
+
+
+https://user-images.githubusercontent.com/90212939/154867468-27f9a67b-9919-4e7f-82cc-dcaa18658aaf.mp4
+
+
+https://user-images.githubusercontent.com/90212939/154867469-19080d98-870a-4726-bf02-cf204566e9ab.mp4
+
+
 ## Built With
 * JavaScript
 * Node.js
