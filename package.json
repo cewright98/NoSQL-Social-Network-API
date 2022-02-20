@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/cewright98/NoSQL-Social-Network-API/issues"
   },
-  "homepage": "https://github.com/cewright98/NoSQL-Social-Network-API#readme"
+  "homepage": "https://github.com/cewright98/NoSQL-Social-Network-API#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
