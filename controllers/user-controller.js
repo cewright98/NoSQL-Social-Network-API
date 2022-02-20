@@ -1,4 +1,4 @@
-const User = require('../models');
+const User = require('../models/user');
 
 const userController = {
   // get all users
@@ -54,10 +54,10 @@ const userController = {
   },
 
   // add a friend to a user's friend list
-  addUserFriend(req, res) {
+  addUserFriend({ params }, res) {
     User.findOneAndUpdate(
-      { _id: req.params.friendId },
-      { $push: { friends: _id } },
+      { _id: params.userId },
+      { $push: { friends: params.friendId } },
       { new: true, runValidators: true }
     )
       .then(dbUserData => {
@@ -74,7 +74,7 @@ const userController = {
   deleteUserFriend({ params }, res) {
     User.findOneAndUpdate(
       { _id: params.userId },
-      { $pull: { friends: { userId: params.friendId } } },
+      { $pull: { friends: params.friendId } },
       { new: true }
     )
       .then(dbUserData => res.json(dbUserData))

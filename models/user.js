@@ -1,4 +1,5 @@
-const Schema = require('mongoose');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 // create user schema with username, email, thoughts, and friends
 const UserSchema = new Schema(
@@ -31,13 +32,16 @@ const UserSchema = new Schema(
   {
     toJSON: {
       virtuals: true
-    }
+    },
+    id: false
   }
 );
 
 // create virtual for length of user's friends array
-UserSchema.virtual('friendsLength').get(function() {
+UserSchema.virtual('friendCount').get(function() {
   return this.friends.length;
 });
 
-module.exports = UserSchema;
+const User = mongoose.model('User', UserSchema);
+
+module.exports = User;
